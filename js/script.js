@@ -2,5 +2,7 @@ $( function() {
   var parser = document.createElement('a');
   parser.href = window.location.href;
 
-  console.log(parser.hash);
+  var accessToken = parser.hash;
+  alert(accessToken.substring('#access_token='.length));
+  console.log(accessToken);
 });
