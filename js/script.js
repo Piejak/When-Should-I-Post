@@ -3,6 +3,6 @@ $( function() {
   parser.href = window.location.href;
 
   var rawAccessToken = parser.hash;
-  var accessToken = rawAccessToken.substring('#access_token='.length));
+  var accessToken = rawAccessToken.substring('#access_token='.length);
   console.log(accessToken);
 });
