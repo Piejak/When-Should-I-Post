@@ -1,9 +1,11 @@
 $( function() {
   var postTime = [];
   var likes = [];
+  var lapt = [];
+  var sortTime =[];
   var parser = document.createElement('a');
-  parser.href = window.location.href;
-  //parser.href = "http://piejak.github.io/When-Should-I-Post/success.html#access_token=23817452.550939d.65b883ca68a543adaba9d68a95846c96"
+  //parser.href = window.location.href;
+  parser.href = "http://piejak.github.io/When-Should-I-Post/success.html#access_token=23817452.550939d.65b883ca68a543adaba9d68a95846c96"
 
   var rawAccessToken = parser.hash;
   var accessToken = rawAccessToken.substring("#access_token=".length);
@@ -24,15 +26,30 @@ $( function() {
     success: function(response) {
       console.log(response);
       $.each(response.data, function(index) {
+        lapt.push([]);
         var mill = response.data[index].created_time * 1000;
+        sortTime.push(mill);
         var d = new Date(mill)
         var hour = d.getHours();
         var minute = d.getMinutes();
-        postTime.push(hour + ":" + minute);
+        if(hour > 12) {
+          postTime.push((hour - 12) + ":" + minute + " PM");
+        } else if (hour === 12) {
+          postTime.push(hour + ":" + minute + " PM");
+        } else {
+          postTime.push(hour + ":" + minute + " AM");
+        }
         likes.push(response.data[index].likes.count);
+        $.each(lapt, function(i) {
+          lapt[i].push(sortTime[i]);
+          lapt[i].push(postTime[i]);
+          lapt[i].push(likes[i]);
+        });
       });
+
       console.log(postTime);
       console.log(likes);
+      console.log(lapt);
 
       new Chartist.Line('.ct-chart', {
         labels: postTime,
