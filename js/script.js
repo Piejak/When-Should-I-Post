@@ -40,11 +40,11 @@ $( function() {
           postTime.push(hour + ":" + minute + " AM");
         }
         likes.push(response.data[index].likes.count);
-        $.each(lapt, function(i) {
-          lapt[i].push(sortTime[i]);
-          lapt[i].push(postTime[i]);
-          lapt[i].push(likes[i]);
-        });
+      });
+      $.each(lapt, function(i) {
+        lapt[i].push(sortTime[i]);
+        lapt[i].push(postTime[i]);
+        lapt[i].push(likes[i]);
       });
 
       console.log(postTime);
