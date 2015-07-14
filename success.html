@@ -38,22 +38,40 @@
     <!-- navbar -->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dropdown" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">When Should I Post?</a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dropdown" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">When Should I Post?</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="dropdown">
+          <ul class="nav navbar-nav">
+            <li><a href="#like-time-loc">Likes vs. time posted</a></li>
+            <li><a href="#avg-like-loc">Average likes</a></li>
+          </ul>
+        </div>
       </div>
 
     </nav>
 
     <!-- likes based on time posted graph -->
-    <div class="container">
+    <div class="container" id="like-time-loc">
       <h3>Number of likes based on time posted</h3>
       <div class="ct-chart ct-minor-seventh">
       </div>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- average likes over last 20 photos -->
+    <div class="container" id="avg-like-loc">
+      <h3>Average likes over last 20 photos</h3>
+      <h1 id="avg-likes"></h1>
     </div>
 
 

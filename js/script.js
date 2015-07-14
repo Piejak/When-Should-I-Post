@@ -5,9 +5,10 @@ $( function() {
   var sortTime =[];
   var sortedPostTime = [];
   var sortedLikes = [];
+  var avgLikes = 0;
   var parser = document.createElement('a');
-  parser.href = window.location.href;
-  //parser.href = "http://piejak.github.io/When-Should-I-Post/success.html#access_token=23817452.550939d.65b883ca68a543adaba9d68a95846c96"
+  //parser.href = window.location.href;
+  parser.href = "http://piejak.github.io/When-Should-I-Post/success.html#access_token=23817452.550939d.65b883ca68a543adaba9d68a95846c96"
 
   var rawAccessToken = parser.hash;
   var accessToken = rawAccessToken.substring("#access_token=".length);
@@ -43,7 +44,9 @@ $( function() {
           postTime.push(hour + ":" + minute + " AM");
         }
         likes.push(response.data[index].likes.count);
+        avgLikes = avgLikes + response.data[index].likes.count;
       });
+      avgLikes = Math.round((avgLikes / likes.length) * 100) / 100;
       $.each(lapt, function(i) {
         lapt[i].push(sortTime[i]);
         lapt[i].push(postTime[i]);
@@ -67,6 +70,7 @@ $( function() {
 
       console.log(sortedPostTime);
       console.log(sortedLikes);
+      console.log(avgLikes);
 
       new Chartist.Line('.ct-chart', {
         labels: sortedPostTime,
@@ -83,6 +87,8 @@ $( function() {
           offset: 20
         }
       });
+
+      document.getElementById('avg-likes').innerHTML = avgLikes;
     }
   });
 
