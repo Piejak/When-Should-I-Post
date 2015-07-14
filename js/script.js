@@ -7,8 +7,8 @@ $( function() {
   var sortedLikes = [];
   var avgLikes = 0;
   var parser = document.createElement('a');
-  //parser.href = window.location.href;
-  parser.href = "http://piejak.github.io/When-Should-I-Post/success.html#access_token=23817452.550939d.65b883ca68a543adaba9d68a95846c96"
+  parser.href = window.location.href;
+  //parser.href = "http://piejak.github.io/When-Should-I-Post/success.html#access_token=23817452.550939d.65b883ca68a543adaba9d68a95846c96"
 
   var rawAccessToken = parser.hash;
   var accessToken = rawAccessToken.substring("#access_token=".length);
