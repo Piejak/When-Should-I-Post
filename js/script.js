@@ -6,6 +6,32 @@ $( function() {
   var sortedPostTime = [];
   var sortedLikes = [];
   var avgLikes = 0;
+
+  //variables for filters
+  var normal = [];
+  var lark = [];
+  var reyes = [];
+  var juno = [];
+  var slumber = [];
+  var crema = [];
+  var ludwig = [];
+  var aden = [];
+  var perpetua = [];
+  var amaro = [];
+  var mayfair = [];
+  var rise = [];
+  var hudson = [];
+  var valencia = [];
+  var xproii = [];
+  var sierra = [];
+  var willow = [];
+  var lofi = [];
+  var earlybird = [];
+  var brannan = [];
+  var inkwell = [];
+  var hefe = [];
+  var nashville = [];
+  
   var parser = document.createElement('a');
   parser.href = window.location.href;
   //parser.href = "http://piejak.github.io/When-Should-I-Post/success.html#access_token=23817452.550939d.65b883ca68a543adaba9d68a95846c96"
