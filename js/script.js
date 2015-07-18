@@ -100,7 +100,80 @@ $( function() {
         likes.push(response.data[index].likes.count);
         avgLikes = avgLikes + response.data[index].likes.count;
         filterList.push(response.data[index].filter);
-        
+        switch(response.data[index].filter) {
+          case "Normal":
+            normal.push(response.data[index].likes.count);
+            break;
+          case "Lark":
+            lark.push(response.data[index].likes.count);
+            break;
+          case "Reyes":
+            reyes.push(response.data[index].likes.count);
+            break;
+          case "Juno":
+            juno.push(response.data[index].likes.count);
+            break;
+          case "Slumber":
+            slumber.push(response.data[index].likes.count);
+            break;
+          case "Crema":
+            crema.push(response.data[index].likes.count);
+            break;
+          case "Ludwig":
+            ludwig.push(response.data[index].likes.count);
+            break;
+          case "Aden":
+            aden.push(response.data[index].likes.count);
+            break;
+          case "Perpetua":
+            perpetua.push(response.data[index].likes.count);
+            break;
+          case "Amaro":
+            amaro.push(response.data[index].likes.count);
+            break;
+          case "Mayfair":
+            mayfair.push(response.data[index].likes.count);
+            break;
+          case "Rise":
+            rise.push(response.data[index].likes.count);
+            break;
+          case "Hudson":
+            hudson.push(response.data[index].likes.count);
+            break;
+          case "Valencia":
+            valencia.push(response.data[index].likes.count);
+            break;
+          case "X Pro II":
+            xproii.push(response.data[index].likes.count);
+            break;
+          case "Sierra":
+            sierra.push(response.data[index].likes.count);
+            break;
+          case "Willow":
+            willow.push(response.data[index].likes.count);
+            break;
+          case "Lo-Fi":
+            lofi.push(response.data[index].likes.count);
+            break;
+          case "Earlybird":
+            earlybird.push(response.data[index].likes.count);
+            break;
+          case "Brannan":
+            brannan.push(response.data[index].likes.count);
+            break;
+          case "Inkwell":
+            inkwell.push(response.data[index].likes.count);
+            break;
+          case "Hefe":
+            hefe.push(response.data[index].likes.count);
+            break;
+          case "Nashville":
+            nashville.push(response.data[index].likes.count);
+            break;
+          case "1977":
+            a1997.push(response.data[index].likes.count);
+            break;
+        }
       });
       avgLikes = Math.round((avgLikes / likes.length) * 100) / 100;
       $.each(filterList, function(i, el) {
